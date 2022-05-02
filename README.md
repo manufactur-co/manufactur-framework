@@ -22,9 +22,16 @@ Or you can build all of the scss and js to /dist
 ```bash
   npm run watch
 ```
+## Installation
 
+Install Manufactur Framework via script and link tag
+
+```bash
+  <link rel="stylesheet" href="manufactur.css">
+  <script src="manufactur-min.js"></script>
+```
 ## Usage/Examples
-
+Components are easy to use.
 ### Accordion
 Show/Hide contents using Accordion. This is useful for contents like FAQ wherein the title will be question and then the answer will be the accordion's content.
 ```javascript
