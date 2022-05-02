@@ -3,8 +3,25 @@
 
 This is a css framework made by Manufactur
 
+## Deployment
 
+Install the npm modules first
 
+```bash
+  npm install
+```
+
+Then you can watch scss or js changes
+
+```bash
+  npm run watch
+```
+
+Or you can build all of the scss and js to /dist
+
+```bash
+  npm run watch
+```
 
 ## Usage/Examples
 

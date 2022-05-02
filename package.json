@@ -4,12 +4,12 @@
   "description": "A CSS Framework by Manufactur.",
   "main": "gulpfile.js",
   "scripts": {
-    "styles:theme": "gulp sass",
-    "styles:quickload": "gulp quickload",
-    "styles": "run-s styles:**",
+    "compile:theme": "gulp sass",
+    "compile:js": "gulp js",
+    "compile": "run-s compile:**",
     "watch:gulp": "gulp",
     "watch": "run-p watch:**",
-    "build": "npm run styles"
+    "build": "npm run compile"
   },
   "repository": {
     "type": "git",
