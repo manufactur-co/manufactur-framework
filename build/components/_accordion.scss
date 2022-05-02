@@ -1,0 +1,48 @@
+// $default-accordion-transition: all .35s linear;
+$default-accordion-bakcground: #fff;
+$default-accordion-padding: rem-calc( 20px ) rem-calc( 16px );
+$default-accordion-border: rem-calc( 1px ) solid #e6e6e6;
+
+.accordion  {
+    background-color: $default-accordion-bakcground;
+
+    &__title {
+        padding: $default-accordion-padding;
+        border: $default-accordion-border;
+        border-bottom: 0;
+        background-color: darken( $default-accordion-bakcground, 5% );
+        display: block;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            margin-top: -0.5rem;
+            content: "+";
+        }
+    }
+
+    &__content {
+        padding: $default-accordion-padding;
+        border: $default-accordion-border;
+        border-bottom: 0;
+        display: none;
+        // @include transition( $default-accordion-transition );
+
+        &:not( .is-active ) {
+            overflow: hidden;
+        }
+    }
+
+    &__item {
+        &:last-child > .accordion__content:last-child,
+        &:last-child:not(.is-active) > .accordion__title {
+            border-bottom: $default-accordion-border;
+        }
+
+        &.is-active > .accordion__title::before {
+            content: "–";
+        }
+    }
+}
