@@ -1,1 +1,1 @@
-# manufactur-framework
+# Manufactur Framework
