@@ -111,7 +111,7 @@ function MFRPopup( index, element ) {
     this.$index = index;
 
     this.selectors = {
-        "close" : ".mfr-popup__close"
+        "close" : "[data-mfr-popup-close]"
     }
 
     this.closeOnOverlayClick = this.$element.data( "close-on-overlay-click" );
