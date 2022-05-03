@@ -11,9 +11,9 @@ function MFRAccordion( index, element ) {
     this.$index = index;
 
     this.selectors = {
-        "item" : ".accordion__item",
-        "title" : ".accordion__title",
-        "content" : ".accordion__content"
+        "item" : ".mfr-accordion__item",
+        "title" : ".mfr-accordion__title",
+        "content" : ".mfr-accordion__content"
     }
 
     this.animationDuration = 350;
@@ -100,14 +100,52 @@ MFRAccordion.prototype = Object.assign( {}, MFRAccordion.prototype, {
     }
 } );
 
+function MFRPopup() {
+    this.$element = $( element );
+    this.$index = index;
 
+    this.selectors = {
+        "item" : ".mfr-popup__item",
+        "title" : ".mfr-popup__title",
+        "content" : ".mfr-popup__content"
+    }
+
+    this.init();
+}
+
+MFRPopup.prototype = Object.assign( {}, MFRPopup.prototype, {
+    init: function() {
+
+    }
+} );
+
+// Initialize Components
+window.allComponents = {};
+function initializeComponent( selector, Component ) {
+    const components = [];
+    const propertyName = selector.replace( '.', '' ).replace( '-', '_' );
+
+    // Exit function if selector has already been initialized.
+    if( window.allComponents[ propertyName ] != undefined ) return false;
+
+    // Initialize on load.
+    jQuery( selector ).each( function( index, element ) {
+        const initComponent = new Component( index, element );
+
+        components.push( initComponent );
+    } );
+
+    // Add components list to the list of initialized components.
+    window.allComponents[ propertyName ] = components;
+
+    // Return initialized components.
+    return components;
+}
 
 // Init
 function init() {
     // Accordion
-    $( ".accordion" ).each( function( index, element ) {
-        var mfrAccordion = new MFRAccordion( index, element );
-    } );
+    initializeComponent( ".mfr-accordion", MFRAccordion );
 }
 
 // Event

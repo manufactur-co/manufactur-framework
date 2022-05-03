@@ -37,10 +37,10 @@ Components are easy to use.
 ### Accordion
 Show/Hide contents using Accordion. This is useful for contents like FAQ wherein the title will be question and then the answer will be the accordion's content.
 ```javascript
-<div class="accordion" data-multi-expand="false">
-    <div class="accordion__item">
-        <a href="#" class="accordion__title">Accordion 1</a>
-        <div class="accordion__content">
+<div class="mfr-accordion" data-multi-expand="false">
+    <div class="mfr-accordion__item">
+        <a href="#" class="mfr-accordion__title">Accordion 1</a>
+        <div class="mfr-accordion__content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna 
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
