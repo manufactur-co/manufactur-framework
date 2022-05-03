@@ -36,12 +36,13 @@ $default-accordion-border: rem-calc( 1px ) solid #e6e6e6;
     }
 
     &__item {
-        &:last-child > .accordion__content:last-child,
-        &:last-child:not(.is-active) > .accordion__title {
+        &:last-child > .mfr-accordion__content:last-child,
+        &:last-child:not(.is-active) > .mfr-accordion__title,
+        &.is-active:last-child > .mfr-accordion__content {
             border-bottom: $default-accordion-border;
         }
 
-        &.is-active > .accordion__title::before {
+        &.is-active > .mfr-accordion__title::before {
             content: "–";
         }
     }
