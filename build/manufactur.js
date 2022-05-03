@@ -100,22 +100,48 @@ MFRAccordion.prototype = Object.assign( {}, MFRAccordion.prototype, {
     }
 } );
 
-function MFRPopup() {
+/**
+ * MFRPopup
+ * 
+ * @param {Number} index 
+ * @param {HTML} element 
+ */
+function MFRPopup( index, element ) {
     this.$element = $( element );
     this.$index = index;
 
     this.selectors = {
-        "item" : ".mfr-popup__item",
-        "title" : ".mfr-popup__title",
-        "content" : ".mfr-popup__content"
+        "close" : ".mfr-popup__close"
     }
+
+    this.closeOnOverlayClick = this.$element.data( "close-on-overlay-click" );
 
     this.init();
 }
 
 MFRPopup.prototype = Object.assign( {}, MFRPopup.prototype, {
     init: function() {
+        this.$close = this.$element.find( this.selectors.close );
 
+        $( "[data-mfr-open-popup]" ).on( "click", this._handleOpenPopup.bind( this ) );
+        this.$close.on( "click", this._handleClosePopup.bind( this ) );
+        this.$element.on( "click", this._handleOverlayClick.bind( this ) );
+    },
+    _handleOpenPopup: function( event ) {
+        var targetID = $( event.currentTarget ).data( "mfr-open-popup" );
+
+        if( !$( targetID ).length ) return;
+
+        this.$element.addClass( "is-active" );
+    },
+    _handleClosePopup: function( event ) {
+        this.$element.removeClass( "is-active" );
+    },
+    _handleOverlayClick: function( event ) {
+        if( !this.closeOnOverlayClick ) return;
+        if( $( event.target ).get(0) == this.$element.get(0) ) {
+            this.$element.removeClass( "is-active" );
+        }
     }
 } );
 
@@ -146,6 +172,8 @@ function initializeComponent( selector, Component ) {
 function init() {
     // Accordion
     initializeComponent( ".mfr-accordion", MFRAccordion );
+    // Popup
+    initializeComponent( ".mfr-popup", MFRPopup );
 }
 
 // Event

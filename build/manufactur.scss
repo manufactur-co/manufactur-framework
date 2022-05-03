@@ -1,9 +1,12 @@
 @charset 'UTF-8';
 
+//Normalzie
+@import './quickload-css';
 
 // Tools
 @import './tools/util/util';
 @import './tools/mixins';
 
 // Components
-@import './components/accordion'
+@import './components/accordion';
+@import './components/popup';

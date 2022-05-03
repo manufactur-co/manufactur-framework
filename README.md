@@ -54,4 +54,29 @@ Show/Hide contents using Accordion. This is useful for contents like FAQ wherein
     ...
 </div>
 ```
+### Popup
+Shop popups for your contents.
+```javascript
+<a href="#" data-mfr-open-popup="#mfr-popup-1">Open Modal</a> 
+<button data-mfr-open-popup="#mfr-popup-1">Open Modal</button>
+
+<div class="mfr-popup" id="mfr-popup-1" data-close-on-overlay-click="true">
+    <div class="mfr-popup__wrapper">
+        <div href="#" class="mfr-popup__close" data-mfr-popup-close>&times;</div>
+        <div class="mfr-popup__title">
+            <h2>Popup Heading</h2>
+        </div>
+        <div class="mfr-popup__content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                Duis aute irure dolor in reprehenderit in voluptate velit 
+                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</div>
+```
 
