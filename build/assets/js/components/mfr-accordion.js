@@ -30,8 +30,8 @@
 
     _handleTitleClick( event ) {
         event.preventDefault();
-        var item = $( event.target ).closest( this.selectors.item );
-        var content = $( event.target ).siblings( this.selectors.content );
+        const item = $( event.target ).closest( this.selectors.item );
+        const content = $( event.target ).siblings( this.selectors.content );
 
         if( !this.multiExpand ) this.closeItem( this.$item.not( item ) );
 
@@ -44,15 +44,13 @@
 
     openItem( item ) {
         const content = $( item ).find( this.selectors.content );
-        const paddingTop = content.css("padding-top");
-        const paddingBottom = content.css("padding-top");
+        let paddingTop = content.css("padding-top");
+        let paddingBottom = content.css("padding-top");
         const duration = this.animationDuration;
         const contentHeight = content.css( { display: "block" }).outerHeight();
         content.css( { display: "" } );
 
         if( item.hasClass( "animating" ) ) return;
-
-        console.log( contentHeight, paddingTop, paddingBottom );
 
         item.addClass( "is-active" ).addClass( "animating" );
         content
@@ -78,8 +76,8 @@
     }
 
     closeItem( item ) {
-        var content = $( item ).find( this.selectors.content );
-        var duration = this.animationDuration;
+        const content = $( item ).find( this.selectors.content );
+        const duration = this.animationDuration;
 
         if( item.hasClass( "animating" ) ) return;
 
