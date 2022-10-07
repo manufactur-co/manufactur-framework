@@ -43,14 +43,16 @@
     }
 
     openItem( item ) {
-        var content = $( item ).find( this.selectors.content );
-        var paddingTop = content.css("padding-top");
-        var paddingBottom = content.css("padding-top");
-        var duration = this.animationDuration;
-        var contentHeight = content.css( { display: "block" }).height();
+        const content = $( item ).find( this.selectors.content );
+        const paddingTop = content.css("padding-top");
+        const paddingBottom = content.css("padding-top");
+        const duration = this.animationDuration;
+        const contentHeight = content.css( { display: "block" }).outerHeight();
         content.css( { display: "" } );
 
         if( item.hasClass( "animating" ) ) return;
+
+        console.log( contentHeight, paddingTop, paddingBottom );
 
         item.addClass( "is-active" ).addClass( "animating" );
         content
