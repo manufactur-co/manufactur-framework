@@ -20,7 +20,7 @@ Then you can watch scss or js changes
 Or you can build all of the scss and js to /dist
 
 ```bash
-  npm run watch
+  npm run build
 ```
 ## Installation
 
@@ -29,8 +29,7 @@ Install Manufactur Framework via script and link tag. Manufactur js uses jQuery 
 ```bash
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manufactur-co/manufactur-framework/dist/manufactur.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/gh/manufactur-co/manufactur-framework/dist/manufactur-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/manufactur-co/manufactur-framework/dist/manufactur.js"></script>
 ```
 ## Usage/Examples
 Components are easy to use.
