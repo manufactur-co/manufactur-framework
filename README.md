@@ -27,9 +27,9 @@ Or you can build all of the scss and js to /dist
 Install Manufactur Framework via script and link tag. Manufactur js uses jQuery so make sure it is added also.
 
 ```bash
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manufactur-co/manufactur-framework/dist/manufactur.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/manufactur-co/manufactur-framework/dist/css/manufactur.css">
 
-  <script src="https://cdn.jsdelivr.net/gh/manufactur-co/manufactur-framework/dist/manufactur.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/manufactur-co/manufactur-framework/dist/js/manufactur.js"></script>
 ```
 ## Usage/Examples
 Components are easy to use.
